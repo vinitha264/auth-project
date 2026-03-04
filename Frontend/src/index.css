@@ -1,0 +1,56 @@
+/* Make body take full screen */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+/* Full screen gradient */
+.home-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* Card styling */
+.card {
+  background: white;
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  width: 400px;
+}
+
+.card h1 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.card p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* Button styling */
+.card button {
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background: #4285F4;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background: #3367d6;
+  transform: translateY(-2px);
+}
+
+
+
