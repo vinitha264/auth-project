@@ -1,12 +1,9 @@
-/* Make body take full screen */
 html,
 body,
 #root {
   height: 100%;
   margin: 0;
 }
-
-/* Full screen gradient */
 .home-container {
   height: 100%;
   display: flex;
@@ -15,7 +12,6 @@ body,
   background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
-/* Card styling */
 .card {
   background: white;
   padding: 50px;
@@ -35,7 +31,6 @@ body,
   margin-bottom: 25px;
 }
 
-/* Button styling */
 .card button {
   padding: 12px 25px;
   font-size: 16px;
