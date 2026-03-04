@@ -1,8 +1,6 @@
-// config/passport.js
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const User = require("../models/User");
-
 if (
     !process.env.GOOGLE_CLIENT_ID ||
     !process.env.GOOGLE_CLIENT_SECRET ||
@@ -18,11 +16,10 @@ passport.use(
             clientID: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
             callbackURL: process.env.GOOGLE_CALLBACK_URL,
-            scope: ["profile", "email"], // ✅ Force email scope
+            scope: ["profile", "email"],
         },
         async (accessToken, refreshToken, profile, done) => {
             try {
-                // ✅ Extract data safely
                 const googleId = profile.id;
                 const name = profile.displayName || "";
                 const email = profile.emails?.[0]?.value || "";
@@ -35,7 +32,6 @@ passport.use(
                 let user = await User.findOne({ googleId });
 
                 if (!user) {
-                    // ✅ Create new user
                     user = await User.create({
                         googleId,
                         name,
@@ -43,7 +39,6 @@ passport.use(
                         photo,
                     });
                 } else {
-                    // ✅ Update only if changed
                     user.name = name;
                     user.email = email;
                     user.photo = photo;
@@ -60,7 +55,7 @@ passport.use(
 );
 
 passport.serializeUser((user, done) => {
-    done(null, user._id); // ✅ use MongoDB _id
+    done(null, user._id);
 });
 
 passport.deserializeUser(async (id, done) => {
