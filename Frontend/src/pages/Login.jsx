@@ -4,28 +4,22 @@ const Login = () => {
     const [user, setUser] = useState(null);
     const BASE_URL = "http://localhost:5000";
 
-    // 🔵 Google Login
     const handleLogin = () => {
         window.location.href = `${BASE_URL}/api/auth/google`;
     };
     
-    // 🔴 Logout
     const handleLogout = async () => {
         try {
-            // Call backend logout route
             await fetch(`${BASE_URL}/api/auth/logout`, {
                 credentials: "include",
             });
 
-            setUser(null); // Clear frontend state
-            // Redirect manually after logout
-            window.location.href = "/"; // your frontend home/login page
+            setUser(null); 
+            window.location.href = "/"; 
         } catch (err) {
             console.error("Logout error:", err);
         }
     };
-
-    // 🟢 Fetch Logged-in User on mount
     useEffect(() => {
         const fetchUser = async () => {
             try {
