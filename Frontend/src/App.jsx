@@ -5,9 +5,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/DashBoard";
 import ProtectedRoute from "./components/protectedRoute";
 
-// Temporary page to handle Google OAuth redirect
 const OAuthRedirect = () => {
-  // When Google redirects here, just navigate to dashboard
   useEffect(() => {
     window.location.href = "/dashboard";
   }, []);
