@@ -36,7 +36,6 @@ export const AuthProvider = ({ children }) => {
 
     const logout = () => {
         setUser(null);
-        // Redirect to backend logout endpoint
         window.location.href = "http://localhost:5000/api/auth/logout";
     };
 
