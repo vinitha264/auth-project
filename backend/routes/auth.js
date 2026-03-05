@@ -11,11 +11,11 @@ router.get(
 router.get(
     "/google/callback",
     passport.authenticate("google", {
-        failureRedirect: "http://localhost:5173/login",
+        failureRedirect: "https://auth-project-bai2.onrender.com/login",
         session: true,
     }),
     (req, res) => {
-        res.redirect("http://localhost:5173/dashboard");
+        res.redirect("https://auth-project-bai2.onrender.com/dashboard");
     }
 );
 
@@ -38,7 +38,7 @@ router.get("/logout", (req, res, next) => {
                 secure: true, 
             });
 
-            res.redirect("http://localhost:5173/login");
+            res.redirect("https://auth-project-bai2.onrender.com/login");
         });
     });
 });
