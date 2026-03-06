@@ -16,7 +16,7 @@ const Dashboard = () => {
 
     const handleLogout = () => {
         setLogoutLoading(true);
-        window.location.href = "http://localhost:5000/api/auth/logout";
+        window.location.href = "https://auth-project-bai2.onrender.com/api/auth/logout";
     };
 
     if (loading) {
