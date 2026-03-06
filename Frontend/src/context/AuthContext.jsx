@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
         const fetchUser = async () => {
             try {
                 const res = await fetch(
-                    "http://localhost:5000/api/user/me",
+                    "https://auth-project-bai2.onrender.com/api/user/me",
                     {
                         method: "GET",
                         credentials: "include",
