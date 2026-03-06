@@ -11,11 +11,11 @@ router.get(
 router.get(
     "/google/callback",
     passport.authenticate("google", {
-        failureRedirect: "https://auth-project-bai2.onrender.com/login",
+        failureRedirect: "https://auth-project-1-9ag0.onrender.com/login",
         session: true,
     }),
     (req, res) => {
-        res.redirect("https://auth-project-bai2.onrender.com/dashboard");
+        res.redirect("https://auth-project-1-9ag0.onrender.com/dashboard");
     }
 );
 
@@ -38,7 +38,7 @@ router.get("/logout", (req, res, next) => {
                 secure: true, 
             });
 
-            res.redirect("https://auth-project-bai2.onrender.com/login");
+            res.redirect("https://auth-project-1-9ag0.onrender.com/login");
         });
     });
 });
