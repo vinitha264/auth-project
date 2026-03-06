@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
 
     const logout = () => {
         setUser(null);
-        window.location.href = "http://localhost:5000/api/auth/logout";
+        window.location.href = "https://auth-project-bai2.onrender.com/api/auth/logout";
     };
 
     return (
